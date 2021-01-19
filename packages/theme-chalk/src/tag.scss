@@ -2,19 +2,19 @@
 @import "common/var";
 
 @mixin genTheme($backgroundColorWeight, $borderColorWeight, $fontColorWeight, $hoverColorWeight) {
-  background-color: mix($--tag-primary-color, $--color-white, $backgroundColorWeight);
-  border-color: mix($--tag-primary-color, $--color-white, $borderColorWeight);
-  color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
+  background-color: rgba($--tag-primary-color, $backgroundColorWeight);
+  border-color: rgba($--tag-primary-color, $borderColorWeight);
+  color: rgba($--tag-primary-color, $fontColorWeight);
 
   @include when(hit) {
     border-color: $--tag-primary-color;
   }
 
   .el-tag__close {
-    color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
+    color: rgba($--tag-primary-color, $fontColorWeight);
     &:hover {
       color: $--color-white;
-      background-color: mix($--tag-primary-color, $--color-white, $hoverColorWeight);
+      background-color: rgba($--tag-primary-color, $hoverColorWeight);
     }
   }
 
